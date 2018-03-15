@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="IIS Web Application Name" description="" value="Default Web Site/salesCRMWebApi" tags="IisApp">
+    <parameterEntry kind="ProviderPath" scope="IisApp" match="^D:\\AngularInVisual\\salesCRMWebApi\\salesCRMWebApi\\obj\\Release\\Package\\PackageTmp$" />
+    <parameterEntry kind="ProviderPath" scope="setAcl" match="^D:\\AngularInVisual\\salesCRMWebApi\\salesCRMWebApi\\obj\\Release\\Package\\PackageTmp$" />
+  </parameter>
+  <parameter name="DefaultConnection-Web.config Connection String" description="" value="Data Source=(LocalDb)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\aspnet-salesCRMWebApi-20180309051845.mdf;Initial Catalog=aspnet-salesCRMWebApi-20180309051845;Integrated Security=True" tags="">
+    <parameterEntry kind="XmlFile" scope="D:\\AngularInVisual\\salesCRMWebApi\\salesCRMWebApi\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='DefaultConnection']/@connectionString" />
+  </parameter>
+  <parameter name="GatewaySalesCRMEntities-Web.config Connection String" description="" value="metadata=res://*/Models.GatewaySalesCRM.csdl|res://*/Models.GatewaySalesCRM.ssdl|res://*/Models.GatewaySalesCRM.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=10.0.2.236;initial catalog=GatewaySalesCRM;persist security info=True;user id=saa;password=Password123@;MultipleActiveResultSets=True;App=EntityFramework&quot;" tags="">
+    <parameterEntry kind="XmlFile" scope="D:\\AngularInVisual\\salesCRMWebApi\\salesCRMWebApi\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='GatewaySalesCRMEntities']/@connectionString" />
+  </parameter>
+</parameters>

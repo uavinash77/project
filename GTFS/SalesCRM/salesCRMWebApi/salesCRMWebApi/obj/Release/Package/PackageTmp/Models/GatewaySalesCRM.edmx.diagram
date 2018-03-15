@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="f392758f09fe42a2bf7fc37622fa8a42" Name="Diagram1" ZoomLevel="53">
+        <EntityTypeShape EntityType="GatewaySalesCRMModel.category" Width="1.5" PointX="6.75" PointY="3.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="GatewaySalesCRMModel.ContactCompany" Width="1.5" PointX="1.5" PointY="13.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="GatewaySalesCRMModel.customer" Width="1.5" PointX="0.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="GatewaySalesCRMModel.employee" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="GatewaySalesCRMModel.invoice" Width="1.5" PointX="3" PointY="7.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="GatewaySalesCRMModel.lead" Width="1.5" PointX="6" PointY="7.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="GatewaySalesCRMModel.leaddetail" Width="1.5" PointX="8.25" PointY="8" IsExpanded="true" />
+        <EntityTypeShape EntityType="GatewaySalesCRMModel.Opportunity" Width="1.5" PointX="11.25" PointY="7.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="GatewaySalesCRMModel.orderProduct" Width="1.5" PointX="13.5" PointY="7.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="GatewaySalesCRMModel.priceList" Width="1.5" PointX="11.25" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="GatewaySalesCRMModel.product" Width="1.5" PointX="9" PointY="2.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="GatewaySalesCRMModel.sysdiagram" Width="1.5" PointX="2.75" PointY="3.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="GatewaySalesCRMModel.usersAccount" Width="1.5" PointX="3.75" PointY="12.375" IsExpanded="true" />
+        <AssociationConnector Association="GatewaySalesCRMModel.FK_product_category" ManuallyRouted="false" />
+        <AssociationConnector Association="GatewaySalesCRMModel.FK_employee_ContactCompany" ManuallyRouted="false" />
+        <AssociationConnector Association="GatewaySalesCRMModel.FK_invoice_customer" ManuallyRouted="false" />
+        <AssociationConnector Association="GatewaySalesCRMModel.FK_lead_customer" ManuallyRouted="false" />
+        <AssociationConnector Association="GatewaySalesCRMModel.FK_Opportunity_customer" ManuallyRouted="false" />
+        <AssociationConnector Association="GatewaySalesCRMModel.FK_orderProduct_customer" ManuallyRouted="false" />
+        <AssociationConnector Association="GatewaySalesCRMModel.FK_invoice_employee" ManuallyRouted="false" />
+        <AssociationConnector Association="GatewaySalesCRMModel.FK_lead_employee" ManuallyRouted="false" />
+        <AssociationConnector Association="GatewaySalesCRMModel.FK_Opportunity_employee" ManuallyRouted="false" />
+        <AssociationConnector Association="GatewaySalesCRMModel.FK_orderProduct_employee" ManuallyRouted="false" />
+        <AssociationConnector Association="GatewaySalesCRMModel.FK_invoice_Opportunity" ManuallyRouted="false" />
+        <AssociationConnector Association="GatewaySalesCRMModel.FK_invoice_orderProduct" ManuallyRouted="false" />
+        <AssociationConnector Association="GatewaySalesCRMModel.FK_leaddetail_lead" ManuallyRouted="false" />
+        <AssociationConnector Association="GatewaySalesCRMModel.FK_Opportunity_lead" ManuallyRouted="false" />
+        <AssociationConnector Association="GatewaySalesCRMModel.FK_Opportunity_product" ManuallyRouted="false" />
+        <AssociationConnector Association="GatewaySalesCRMModel.FK_orderProduct_Opportunity" ManuallyRouted="false" />
+        <AssociationConnector Association="GatewaySalesCRMModel.FK_orderProduct_product" ManuallyRouted="false" />
+        <AssociationConnector Association="GatewaySalesCRMModel.FK_priceList_product" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

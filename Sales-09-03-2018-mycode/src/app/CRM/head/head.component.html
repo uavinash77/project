@@ -1,0 +1,50 @@
+<header>
+    <section class="view intro-1 hm-black-slight">
+        <div class="full-bg-img flex-center mask pattern-8">
+            <div class="container">
+                <ul>
+                    <li>
+                        <h1 class="display-3 font-bold wow fadeInDown" data-wow-delay="0.2s">Sales CRM</h1>
+                    </li>
+                    <li>
+                        <h3 class="mt-4 mb-5 wow fadeInDown">Gateway Technolabs Pvt. Lmt.</h3>
+                    </li>
+                    <li>
+                        <button type="button" data-toggle="modal" data-target="#login" class="btn btn-primary btn-rounded wow fadeInLeft">
+                            Login
+                        </button>
+                        <button type="button" data-toggle="modal" data-target="#register" class="btn btn-danger btn-rounded wow fadeInRight">
+                            Register
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <!--Login Modal-->
+    <div class="modal fade" id="login" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-md" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <button type="button" class="close waves-effect waves-light" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                    <app-login></app-login>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--SignUp Modal-->
+    <div class="modal fade" id="register" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <button type="button" class="close waves-effect waves-light" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                    <app-signup></app-signup>    
+                </div>
+            </div>
+        </div>
+    </div>
+</header>

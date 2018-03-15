@@ -1,0 +1,22 @@
+<table class="table table-striped">
+    <thead>
+        <th>
+            Id
+        </th>
+
+        <th>
+            Name
+        </th>
+
+        <th>
+            Passsword
+        </th>
+    </thead>
+    <tbody>
+        <tr *ngFor="let employee of employees">
+            <td>{{employee.Id}} </td>
+            <td>{{employee.name}} </td>
+            <td>{{employee.Passsword}} </td>
+        </tr>
+    </tbody>
+</table>

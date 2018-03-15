@@ -1,0 +1,186 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="GatewaySalesCRMModelStoreContainer" CdmEntityContainer="GatewaySalesCRMEntities">
+    <EntitySetMapping Name="categories">
+      <EntityTypeMapping TypeName="GatewaySalesCRMModel.category">
+        <MappingFragment StoreEntitySet="category">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="categoryName" ColumnName="categoryName" />
+          <ScalarProperty Name="categoryDetail" ColumnName="categoryDetail" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ContactCompanies">
+      <EntityTypeMapping TypeName="GatewaySalesCRMModel.ContactCompany">
+        <MappingFragment StoreEntitySet="ContactCompany">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="mobile" ColumnName="mobile" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="city" ColumnName="city" />
+          <ScalarProperty Name="state" ColumnName="state" />
+          <ScalarProperty Name="country" ColumnName="country" />
+          <ScalarProperty Name="pincode" ColumnName="pincode" />
+          <ScalarProperty Name="picture" ColumnName="picture" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="customers">
+      <EntityTypeMapping TypeName="GatewaySalesCRMModel.customer">
+        <MappingFragment StoreEntitySet="customer">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="userName" ColumnName="userName" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="firstName" ColumnName="firstName" />
+          <ScalarProperty Name="middleName" ColumnName="middleName" />
+          <ScalarProperty Name="lastName" ColumnName="lastName" />
+          <ScalarProperty Name="dateOfBirth" ColumnName="dateOfBirth" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="mobile" ColumnName="mobile" />
+          <ScalarProperty Name="companyName" ColumnName="companyName" />
+          <ScalarProperty Name="address" ColumnName="address" />
+          <ScalarProperty Name="city" ColumnName="city" />
+          <ScalarProperty Name="state" ColumnName="state" />
+          <ScalarProperty Name="country" ColumnName="country" />
+          <ScalarProperty Name="pincode" ColumnName="pincode" />
+          <ScalarProperty Name="picture" ColumnName="picture" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="employees">
+      <EntityTypeMapping TypeName="GatewaySalesCRMModel.employee">
+        <MappingFragment StoreEntitySet="employee">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="userName" ColumnName="userName" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="firstName" ColumnName="firstName" />
+          <ScalarProperty Name="middleName" ColumnName="middleName" />
+          <ScalarProperty Name="lastName" ColumnName="lastName" />
+          <ScalarProperty Name="dateofBirth" ColumnName="dateofBirth" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="mobile" ColumnName="mobile" />
+          <ScalarProperty Name="companyid" ColumnName="companyid" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="city" ColumnName="city" />
+          <ScalarProperty Name="state" ColumnName="state" />
+          <ScalarProperty Name="country" ColumnName="country" />
+          <ScalarProperty Name="pincode" ColumnName="pincode" />
+          <ScalarProperty Name="picture" ColumnName="picture" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="invoices">
+      <EntityTypeMapping TypeName="GatewaySalesCRMModel.invoice">
+        <MappingFragment StoreEntitySet="invoice">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="customerId" ColumnName="customerId" />
+          <ScalarProperty Name="employeeid" ColumnName="employeeid" />
+          <ScalarProperty Name="orderId" ColumnName="orderId" />
+          <ScalarProperty Name="opportunityId" ColumnName="opportunityId" />
+          <ScalarProperty Name="price" ColumnName="price" />
+          <ScalarProperty Name="dateCreated" ColumnName="dateCreated" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="leads">
+      <EntityTypeMapping TypeName="GatewaySalesCRMModel.lead">
+        <MappingFragment StoreEntitySet="lead">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="CustomerId" ColumnName="CustomerId" />
+          <ScalarProperty Name="employeeId" ColumnName="employeeId" />
+          <ScalarProperty Name="leadOwner" ColumnName="leadOwner" />
+          <ScalarProperty Name="leadSource" ColumnName="leadSource" />
+          <ScalarProperty Name="leadTopic" ColumnName="leadTopic" />
+          <ScalarProperty Name="leadStatus" ColumnName="leadStatus" />
+          <ScalarProperty Name="leadStage" ColumnName="leadStage" />
+          <ScalarProperty Name="leadBudget" ColumnName="leadBudget" />
+          <ScalarProperty Name="generateddate" ColumnName="generateddate" />
+          <ScalarProperty Name="terminateddate" ColumnName="terminateddate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="leaddetails">
+      <EntityTypeMapping TypeName="GatewaySalesCRMModel.leaddetail">
+        <MappingFragment StoreEntitySet="leaddetail">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="leadId" ColumnName="leadId" />
+          <ScalarProperty Name="modifiedDate" ColumnName="modifiedDate" />
+          <ScalarProperty Name="developedDate" ColumnName="developedDate" />
+          <ScalarProperty Name="proposingDate" ColumnName="proposingDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Opportunities">
+      <EntityTypeMapping TypeName="GatewaySalesCRMModel.Opportunity">
+        <MappingFragment StoreEntitySet="Opportunity">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="customerId" ColumnName="customerId" />
+          <ScalarProperty Name="employeeId" ColumnName="employeeId" />
+          <ScalarProperty Name="leadId" ColumnName="leadId" />
+          <ScalarProperty Name="productId" ColumnName="productId" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="dateCreated" ColumnName="dateCreated" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="orderProducts">
+      <EntityTypeMapping TypeName="GatewaySalesCRMModel.orderProduct">
+        <MappingFragment StoreEntitySet="orderProduct">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="customerId" ColumnName="customerId" />
+          <ScalarProperty Name="employeeId" ColumnName="employeeId" />
+          <ScalarProperty Name="opportunityId" ColumnName="opportunityId" />
+          <ScalarProperty Name="productId" ColumnName="productId" />
+          <ScalarProperty Name="price" ColumnName="price" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="dateCreated" ColumnName="dateCreated" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="priceLists">
+      <EntityTypeMapping TypeName="GatewaySalesCRMModel.priceList">
+        <MappingFragment StoreEntitySet="priceList">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="productId" ColumnName="productId" />
+          <ScalarProperty Name="isDefault" ColumnName="isDefault" />
+          <ScalarProperty Name="discountCategory" ColumnName="discountCategory" />
+          <ScalarProperty Name="discount" ColumnName="discount" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="products">
+      <EntityTypeMapping TypeName="GatewaySalesCRMModel.product">
+        <MappingFragment StoreEntitySet="product">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="price" ColumnName="price" />
+          <ScalarProperty Name="categoryId" ColumnName="categoryId" />
+          <ScalarProperty Name="quantity" ColumnName="quantity" />
+          <ScalarProperty Name="picture" ColumnName="picture" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="GatewaySalesCRMModel.sysdiagram">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="usersAccounts">
+      <EntityTypeMapping TypeName="GatewaySalesCRMModel.usersAccount">
+        <MappingFragment StoreEntitySet="usersAccount">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="userName" ColumnName="userName" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="isAdmin" ColumnName="isAdmin" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

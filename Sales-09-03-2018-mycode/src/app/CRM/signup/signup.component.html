@@ -1,0 +1,90 @@
+<form #customerForm="ngForm" (ngSubmit)="onRegister(customerForm)">
+  <div class="card-body mx-4">
+  <div class="text-center">
+    <h3 class="dark-grey-text mb-5"><strong>Signup</strong></h3>
+  </div>
+   <div class="row">
+    <div class="col-md-4">
+      <div class="md-form">
+        <input type="text" #firstName="ngModel" class="form-control" id="firstName" [(ngModel)]="Customer.firstName" name="firstName" required>
+        <label for="firstName">First Name</label>   
+        <div *ngIf="firstName.invalid && (firstName.dirty || firstName.touched)" class="panel panel-footer"> Field is Required </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="md-form">
+        <input type="text" #middleName="ngModel" class="form-control" name="middleName"  id="middleName" [(ngModel)]="Customer.middleName">
+        <label for="Form-name2">Middle Name</label>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="md-form">
+        <input type="text" #lastName="ngModel" class="form-control" name="lastName"  id="lastName" [(ngModel)]="Customer.lastName" required>
+        <label for="Form-name3">Last Name</label>
+        <div *ngIf="lastName.invalid && (lastName.dirty || lastName.touched)" class="panel panel-footer"> Field is Required </div>
+      </div>
+    </div>
+  </div>
+  <div class="md-form">
+    <input type="email"  class="form-control" name="email" #email="ngModel" id="email" [(ngModel)]="Customer.email" (change)="changeEmail(email.value)"  required>
+    <label for="Form-email1">Email</label>
+    <div *ngIf="email.invalid && (email.dirty || email.touched)" class="panel panel-footer "> Field is Required </div>
+  
+    <div *ngIf="emailbool">{{emailError}}</div>
+ 
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      <div class="md-form ">
+        <input type="text" class="form-control" name="userName" #userName="ngModel" id="userName" [(ngModel)]="Customer.userName" [(ngModel)]="userAccount.userName" required>
+        <label for="Form-mbl">Username</label>
+        <div *ngIf="userName.invalid && (userName.dirty || userName.touched)" class="panel panel-footer"> Field is Required </div>
+        
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="md-form ">
+        <input type="date" class="form-control" name="dateOfBirth"  #dateOfBirth="ngModel" id="dateOfBirth" [(ngModel)]="employee.userName" [(ngModel)]="Customer.dateOfBirth" required>
+        <!-- 
+          <label for="Form-mbl">Date of Birth</label>
+         -->
+         <div *ngIf="dateOfBirth.invalid && (dateOfBirth.dirty || dateOfBirth.touched)" class="panel panel-footer"> Field is Required </div> 
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      <div class="md-form ">
+        <input type="number" class="form-control" maxlength="10" name="mobile" #mobile="ngModel" id="mobile"  [(ngModel)]="employee.mobile" [(ngModel)]="Customer.mobile" required> 
+        <label for="Form-mbl">Mobile</label>
+        <div *ngIf="mobile.invalid && (mobile.dirty || mobile.touched)" class="panel panel-footer"> Field is Required </div> 
+      </div>
+    </div>
+    <div class="col-md-6">
+        Register As Admin
+      <div class="md-form material-switch pull-right">
+            <input type="checkbox" id="Form-check" name="isAdmin" [(ngModel)]="userAccount.isAdmin"/>
+            <label for="Form-check" class="label-danger"></label>
+      </div>
+    </div>
+  </div>
+  <div class="md-form companyname">
+      <input type="text" id="Form-company1" class="form-control" name="companyName"  [(ngModel)]="companyDet.id" [(ngModel)]="Customer.companyName" [(ngModel)]="employee.companyid">
+      <label for="Form-company1">Company Name</label>
+    </div>
+  <div class="md-form">
+    <input type="password" class="form-control" name="password" #password="ngModel" id="password"  [(ngModel)]="employee.password" [(ngModel)]="Customer.password" [(ngModel)]="userAccount.password" required>
+    <label for="Form-pass1">Password</label>
+    <div *ngIf="password.invalid && (password.dirty || password.touched)" class="panel panel-footer"> Field is Required </div> 
+  </div>
+  <div class="md-form">
+      <input type="password" id="Form-cnfpass" class="form-control">
+      <label for="Form-cnfpass">Confirm Password</label>
+  </div>
+  <div>
+    <button [disabled]="!customerForm.valid" type="submit" class="btn btn-primary">Register</button>
+    <button type="button" class="btn btn-danger"  data-toggle="modal" data-dismiss="modal" data-target="#login">Already a Customer</button>
+  </div>
+</div>
+</form>            
+

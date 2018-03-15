@@ -1,0 +1,27 @@
+<form #signupForm="ngForm" (ngSubmit)="CheckUser(signupForm)">
+  <div class="card-body mx-4">
+    <div class="text-center">
+      <h3 class="dark-grey-text mb-5"><strong>Login</strong></h3>
+    </div>
+    <div class="md-form">
+      <input type="text" id="uName" [(ngModel)]="model.userName" name="userName" class="form-control" required>
+      <label for="LoginForm-email1">Username/Email</label>
+    </div>
+    <div class="md-form">
+      <input type="password" id="psw" [(ngModel)]="model.password" name="password" class="form-control" required>
+      <label for="LoginForm-pass1">Password</label>
+    </div>
+      <!-- Is Admin
+      <div class="md-form material-switch pull-right">
+          <input type="checkbox" value="checked" id="Login-Form-check" [(ngModel)]="model.isAdmin" name="isAdmin"/>
+          <label for="Login-Form-check" class="label-danger"></label>
+      </div> -->
+      <br><br>
+    <div>
+      <input type="submit" class="btn btn-primary" value="Login"  name="submit">
+      <!-- <button type="button" class="btn btn-primary" value="Submit"  name="submit">Login</button> -->
+      <button type="button" class="btn btn-danger"  data-toggle="modal" data-dismiss="modal" data-target="#register">Not A Customer</button>
+    </div>
+    <p class="font-small blue-text d-flex justify-content-end">Forgot <a href="#" class="blue-text ml-1"> Password?</a></p>
+  </div>
+</form>            

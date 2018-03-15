@@ -1,0 +1,1200 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="GatewaySalesCRMModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="category">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="categoryName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="categoryDetail" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ContactCompany">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="name" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="email" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="mobile" Type="int" Nullable="false" />
+          <Property Name="Address" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="city" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="state" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="country" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="pincode" Type="int" Nullable="false" />
+          <Property Name="picture" Type="image" />
+        </EntityType>
+        <EntityType Name="customer">
+          <Key>
+            <PropertyRef Name="userName" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="userName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="password" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="firstName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="middleName" Type="varchar" MaxLength="50" />
+          <Property Name="lastName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="dateOfBirth" Type="date" />
+          <Property Name="email" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="mobile" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="companyName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="address" Type="varchar" MaxLength="50" />
+          <Property Name="city" Type="varchar" MaxLength="50" />
+          <Property Name="state" Type="varchar" MaxLength="50" />
+          <Property Name="country" Type="varchar" MaxLength="50" />
+          <Property Name="pincode" Type="int" />
+          <Property Name="picture" Type="image" />
+        </EntityType>
+        <EntityType Name="employee">
+          <Key>
+            <PropertyRef Name="userName" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="userName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="password" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="firstName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="middleName" Type="varchar" MaxLength="50" />
+          <Property Name="lastName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="dateofBirth" Type="date" Nullable="false" />
+          <Property Name="email" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="mobile" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="companyid" Type="int" Nullable="false" />
+          <Property Name="Address" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="city" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="state" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="country" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="pincode" Type="int" Nullable="false" />
+          <Property Name="picture" Type="image" />
+        </EntityType>
+        <EntityType Name="invoice">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="customerId" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="employeeid" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="orderId" Type="int" Nullable="false" />
+          <Property Name="opportunityId" Type="int" Nullable="false" />
+          <Property Name="price" Type="int" Nullable="false" />
+          <Property Name="dateCreated" Type="date" Nullable="false" />
+        </EntityType>
+        <EntityType Name="lead">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CustomerId" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="employeeId" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="leadOwner" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="leadSource" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="leadTopic" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="leadStatus" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="leadStage" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="leadBudget" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="generateddate" Type="date" Nullable="false" />
+          <Property Name="terminateddate" Type="date" Nullable="false" />
+        </EntityType>
+        <EntityType Name="leaddetail">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="leadId" Type="int" Nullable="false" />
+          <Property Name="modifiedDate" Type="date" />
+          <Property Name="developedDate" Type="date" />
+          <Property Name="proposingDate" Type="date" />
+        </EntityType>
+        <EntityType Name="Opportunity">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="customerId" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="employeeId" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="leadId" Type="int" Nullable="false" />
+          <Property Name="productId" Type="int" Nullable="false" />
+          <Property Name="status" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="dateCreated" Type="date" Nullable="false" />
+        </EntityType>
+        <EntityType Name="orderProduct">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="customerId" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="employeeId" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="opportunityId" Type="int" Nullable="false" />
+          <Property Name="productId" Type="int" Nullable="false" />
+          <Property Name="price" Type="float" Nullable="false" />
+          <Property Name="status" Type="bit" Nullable="false" />
+          <Property Name="dateCreated" Type="date" Nullable="false" />
+        </EntityType>
+        <EntityType Name="priceList">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="productId" Type="int" Nullable="false" />
+          <Property Name="isDefault" Type="bit" Nullable="false" />
+          <Property Name="discountCategory" Type="varchar" MaxLength="50" />
+          <Property Name="discount" Type="int" />
+        </EntityType>
+        <EntityType Name="product">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="price" Type="float" Nullable="false" />
+          <Property Name="categoryId" Type="int" Nullable="false" />
+          <Property Name="quantity" Type="int" />
+          <Property Name="picture" Type="image" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="usersAccount">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="userName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="password" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="isAdmin" Type="bit" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_employee_ContactCompany">
+          <End Role="ContactCompany" Type="Self.ContactCompany" Multiplicity="1" />
+          <End Role="employee" Type="Self.employee" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ContactCompany">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="employee">
+              <PropertyRef Name="companyid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_invoice_customer">
+          <End Role="customer" Type="Self.customer" Multiplicity="1" />
+          <End Role="invoice" Type="Self.invoice" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="customer">
+              <PropertyRef Name="userName" />
+            </Principal>
+            <Dependent Role="invoice">
+              <PropertyRef Name="customerId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_invoice_employee">
+          <End Role="employee" Type="Self.employee" Multiplicity="1" />
+          <End Role="invoice" Type="Self.invoice" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="employee">
+              <PropertyRef Name="userName" />
+            </Principal>
+            <Dependent Role="invoice">
+              <PropertyRef Name="employeeid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_invoice_Opportunity">
+          <End Role="Opportunity" Type="Self.Opportunity" Multiplicity="1" />
+          <End Role="invoice" Type="Self.invoice" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Opportunity">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="invoice">
+              <PropertyRef Name="opportunityId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_invoice_orderProduct">
+          <End Role="orderProduct" Type="Self.orderProduct" Multiplicity="1" />
+          <End Role="invoice" Type="Self.invoice" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="orderProduct">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="invoice">
+              <PropertyRef Name="orderId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_lead_customer">
+          <End Role="customer" Type="Self.customer" Multiplicity="1" />
+          <End Role="lead" Type="Self.lead" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="customer">
+              <PropertyRef Name="userName" />
+            </Principal>
+            <Dependent Role="lead">
+              <PropertyRef Name="CustomerId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_lead_employee">
+          <End Role="employee" Type="Self.employee" Multiplicity="1" />
+          <End Role="lead" Type="Self.lead" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="employee">
+              <PropertyRef Name="userName" />
+            </Principal>
+            <Dependent Role="lead">
+              <PropertyRef Name="employeeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_leaddetail_lead">
+          <End Role="lead" Type="Self.lead" Multiplicity="1" />
+          <End Role="leaddetail" Type="Self.leaddetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="lead">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="leaddetail">
+              <PropertyRef Name="leadId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Opportunity_customer">
+          <End Role="customer" Type="Self.customer" Multiplicity="1" />
+          <End Role="Opportunity" Type="Self.Opportunity" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="customer">
+              <PropertyRef Name="userName" />
+            </Principal>
+            <Dependent Role="Opportunity">
+              <PropertyRef Name="customerId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Opportunity_employee">
+          <End Role="employee" Type="Self.employee" Multiplicity="1" />
+          <End Role="Opportunity" Type="Self.Opportunity" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="employee">
+              <PropertyRef Name="userName" />
+            </Principal>
+            <Dependent Role="Opportunity">
+              <PropertyRef Name="employeeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Opportunity_lead">
+          <End Role="lead" Type="Self.lead" Multiplicity="1" />
+          <End Role="Opportunity" Type="Self.Opportunity" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="lead">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Opportunity">
+              <PropertyRef Name="leadId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Opportunity_product">
+          <End Role="product" Type="Self.product" Multiplicity="1" />
+          <End Role="Opportunity" Type="Self.Opportunity" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="product">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Opportunity">
+              <PropertyRef Name="productId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_orderProduct_customer">
+          <End Role="customer" Type="Self.customer" Multiplicity="1" />
+          <End Role="orderProduct" Type="Self.orderProduct" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="customer">
+              <PropertyRef Name="userName" />
+            </Principal>
+            <Dependent Role="orderProduct">
+              <PropertyRef Name="customerId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_orderProduct_employee">
+          <End Role="employee" Type="Self.employee" Multiplicity="1" />
+          <End Role="orderProduct" Type="Self.orderProduct" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="employee">
+              <PropertyRef Name="userName" />
+            </Principal>
+            <Dependent Role="orderProduct">
+              <PropertyRef Name="employeeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_orderProduct_Opportunity">
+          <End Role="Opportunity" Type="Self.Opportunity" Multiplicity="1" />
+          <End Role="orderProduct" Type="Self.orderProduct" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Opportunity">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="orderProduct">
+              <PropertyRef Name="opportunityId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_orderProduct_product">
+          <End Role="product" Type="Self.product" Multiplicity="1" />
+          <End Role="orderProduct" Type="Self.orderProduct" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="product">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="orderProduct">
+              <PropertyRef Name="productId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_priceList_product">
+          <End Role="product" Type="Self.product" Multiplicity="1" />
+          <End Role="priceList" Type="Self.priceList" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="product">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="priceList">
+              <PropertyRef Name="productId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_product_category">
+          <End Role="category" Type="Self.category" Multiplicity="1" />
+          <End Role="product" Type="Self.product" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="category">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="product">
+              <PropertyRef Name="categoryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="GatewaySalesCRMModelStoreContainer">
+          <EntitySet Name="category" EntityType="Self.category" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ContactCompany" EntityType="Self.ContactCompany" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="customer" EntityType="Self.customer" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="employee" EntityType="Self.employee" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="invoice" EntityType="Self.invoice" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="lead" EntityType="Self.lead" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="leaddetail" EntityType="Self.leaddetail" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Opportunity" EntityType="Self.Opportunity" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="orderProduct" EntityType="Self.orderProduct" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="priceList" EntityType="Self.priceList" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="product" EntityType="Self.product" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="usersAccount" EntityType="Self.usersAccount" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_employee_ContactCompany" Association="Self.FK_employee_ContactCompany">
+            <End Role="ContactCompany" EntitySet="ContactCompany" />
+            <End Role="employee" EntitySet="employee" />
+          </AssociationSet>
+          <AssociationSet Name="FK_invoice_customer" Association="Self.FK_invoice_customer">
+            <End Role="customer" EntitySet="customer" />
+            <End Role="invoice" EntitySet="invoice" />
+          </AssociationSet>
+          <AssociationSet Name="FK_invoice_employee" Association="Self.FK_invoice_employee">
+            <End Role="employee" EntitySet="employee" />
+            <End Role="invoice" EntitySet="invoice" />
+          </AssociationSet>
+          <AssociationSet Name="FK_invoice_Opportunity" Association="Self.FK_invoice_Opportunity">
+            <End Role="Opportunity" EntitySet="Opportunity" />
+            <End Role="invoice" EntitySet="invoice" />
+          </AssociationSet>
+          <AssociationSet Name="FK_invoice_orderProduct" Association="Self.FK_invoice_orderProduct">
+            <End Role="orderProduct" EntitySet="orderProduct" />
+            <End Role="invoice" EntitySet="invoice" />
+          </AssociationSet>
+          <AssociationSet Name="FK_lead_customer" Association="Self.FK_lead_customer">
+            <End Role="customer" EntitySet="customer" />
+            <End Role="lead" EntitySet="lead" />
+          </AssociationSet>
+          <AssociationSet Name="FK_lead_employee" Association="Self.FK_lead_employee">
+            <End Role="employee" EntitySet="employee" />
+            <End Role="lead" EntitySet="lead" />
+          </AssociationSet>
+          <AssociationSet Name="FK_leaddetail_lead" Association="Self.FK_leaddetail_lead">
+            <End Role="lead" EntitySet="lead" />
+            <End Role="leaddetail" EntitySet="leaddetail" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Opportunity_customer" Association="Self.FK_Opportunity_customer">
+            <End Role="customer" EntitySet="customer" />
+            <End Role="Opportunity" EntitySet="Opportunity" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Opportunity_employee" Association="Self.FK_Opportunity_employee">
+            <End Role="employee" EntitySet="employee" />
+            <End Role="Opportunity" EntitySet="Opportunity" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Opportunity_lead" Association="Self.FK_Opportunity_lead">
+            <End Role="lead" EntitySet="lead" />
+            <End Role="Opportunity" EntitySet="Opportunity" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Opportunity_product" Association="Self.FK_Opportunity_product">
+            <End Role="product" EntitySet="product" />
+            <End Role="Opportunity" EntitySet="Opportunity" />
+          </AssociationSet>
+          <AssociationSet Name="FK_orderProduct_customer" Association="Self.FK_orderProduct_customer">
+            <End Role="customer" EntitySet="customer" />
+            <End Role="orderProduct" EntitySet="orderProduct" />
+          </AssociationSet>
+          <AssociationSet Name="FK_orderProduct_employee" Association="Self.FK_orderProduct_employee">
+            <End Role="employee" EntitySet="employee" />
+            <End Role="orderProduct" EntitySet="orderProduct" />
+          </AssociationSet>
+          <AssociationSet Name="FK_orderProduct_Opportunity" Association="Self.FK_orderProduct_Opportunity">
+            <End Role="Opportunity" EntitySet="Opportunity" />
+            <End Role="orderProduct" EntitySet="orderProduct" />
+          </AssociationSet>
+          <AssociationSet Name="FK_orderProduct_product" Association="Self.FK_orderProduct_product">
+            <End Role="product" EntitySet="product" />
+            <End Role="orderProduct" EntitySet="orderProduct" />
+          </AssociationSet>
+          <AssociationSet Name="FK_priceList_product" Association="Self.FK_priceList_product">
+            <End Role="product" EntitySet="product" />
+            <End Role="priceList" EntitySet="priceList" />
+          </AssociationSet>
+          <AssociationSet Name="FK_product_category" Association="Self.FK_product_category">
+            <End Role="category" EntitySet="category" />
+            <End Role="product" EntitySet="product" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="GatewaySalesCRMModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="category">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="categoryName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="categoryDetail" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="products" Relationship="Self.FK_product_category" FromRole="category" ToRole="product" />
+        </EntityType>
+        <EntityType Name="ContactCompany">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="mobile" Type="Int32" Nullable="false" />
+          <Property Name="Address" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="city" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="state" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="country" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="pincode" Type="Int32" Nullable="false" />
+          <Property Name="picture" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <NavigationProperty Name="employees" Relationship="Self.FK_employee_ContactCompany" FromRole="ContactCompany" ToRole="employee" />
+        </EntityType>
+        <EntityType Name="customer">
+          <Key>
+            <PropertyRef Name="userName" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="userName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="firstName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="middleName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="lastName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="dateOfBirth" Type="DateTime" Precision="0" />
+          <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="mobile" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="companyName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="address" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="city" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="state" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="country" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="pincode" Type="Int32" />
+          <Property Name="picture" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <NavigationProperty Name="invoices" Relationship="Self.FK_invoice_customer" FromRole="customer" ToRole="invoice" />
+          <NavigationProperty Name="leads" Relationship="Self.FK_lead_customer" FromRole="customer" ToRole="lead" />
+          <NavigationProperty Name="Opportunities" Relationship="Self.FK_Opportunity_customer" FromRole="customer" ToRole="Opportunity" />
+          <NavigationProperty Name="orderProducts" Relationship="Self.FK_orderProduct_customer" FromRole="customer" ToRole="orderProduct" />
+        </EntityType>
+        <EntityType Name="employee">
+          <Key>
+            <PropertyRef Name="userName" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="userName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="firstName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="middleName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="lastName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="dateofBirth" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="mobile" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="companyid" Type="Int32" Nullable="false" />
+          <Property Name="Address" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="city" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="state" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="country" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="pincode" Type="Int32" Nullable="false" />
+          <Property Name="picture" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <NavigationProperty Name="ContactCompany" Relationship="Self.FK_employee_ContactCompany" FromRole="employee" ToRole="ContactCompany" />
+          <NavigationProperty Name="invoices" Relationship="Self.FK_invoice_employee" FromRole="employee" ToRole="invoice" />
+          <NavigationProperty Name="leads" Relationship="Self.FK_lead_employee" FromRole="employee" ToRole="lead" />
+          <NavigationProperty Name="Opportunities" Relationship="Self.FK_Opportunity_employee" FromRole="employee" ToRole="Opportunity" />
+          <NavigationProperty Name="orderProducts" Relationship="Self.FK_orderProduct_employee" FromRole="employee" ToRole="orderProduct" />
+        </EntityType>
+        <EntityType Name="invoice">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="customerId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="employeeid" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="orderId" Type="Int32" Nullable="false" />
+          <Property Name="opportunityId" Type="Int32" Nullable="false" />
+          <Property Name="price" Type="Int32" Nullable="false" />
+          <Property Name="dateCreated" Type="DateTime" Nullable="false" Precision="0" />
+          <NavigationProperty Name="customer" Relationship="Self.FK_invoice_customer" FromRole="invoice" ToRole="customer" />
+          <NavigationProperty Name="employee" Relationship="Self.FK_invoice_employee" FromRole="invoice" ToRole="employee" />
+          <NavigationProperty Name="Opportunity" Relationship="Self.FK_invoice_Opportunity" FromRole="invoice" ToRole="Opportunity" />
+          <NavigationProperty Name="orderProduct" Relationship="Self.FK_invoice_orderProduct" FromRole="invoice" ToRole="orderProduct" />
+        </EntityType>
+        <EntityType Name="lead">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CustomerId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="employeeId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="leadOwner" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="leadSource" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="leadTopic" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="leadStatus" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="leadStage" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="leadBudget" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="generateddate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="terminateddate" Type="DateTime" Nullable="false" Precision="0" />
+          <NavigationProperty Name="customer" Relationship="Self.FK_lead_customer" FromRole="lead" ToRole="customer" />
+          <NavigationProperty Name="employee" Relationship="Self.FK_lead_employee" FromRole="lead" ToRole="employee" />
+          <NavigationProperty Name="leaddetails" Relationship="Self.FK_leaddetail_lead" FromRole="lead" ToRole="leaddetail" />
+          <NavigationProperty Name="Opportunities" Relationship="Self.FK_Opportunity_lead" FromRole="lead" ToRole="Opportunity" />
+        </EntityType>
+        <EntityType Name="leaddetail">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="leadId" Type="Int32" Nullable="false" />
+          <Property Name="modifiedDate" Type="DateTime" Precision="0" />
+          <Property Name="developedDate" Type="DateTime" Precision="0" />
+          <Property Name="proposingDate" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="lead" Relationship="Self.FK_leaddetail_lead" FromRole="leaddetail" ToRole="lead" />
+        </EntityType>
+        <EntityType Name="Opportunity">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="customerId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="employeeId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="leadId" Type="Int32" Nullable="false" />
+          <Property Name="productId" Type="Int32" Nullable="false" />
+          <Property Name="status" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="dateCreated" Type="DateTime" Nullable="false" Precision="0" />
+          <NavigationProperty Name="customer" Relationship="Self.FK_Opportunity_customer" FromRole="Opportunity" ToRole="customer" />
+          <NavigationProperty Name="employee" Relationship="Self.FK_Opportunity_employee" FromRole="Opportunity" ToRole="employee" />
+          <NavigationProperty Name="invoices" Relationship="Self.FK_invoice_Opportunity" FromRole="Opportunity" ToRole="invoice" />
+          <NavigationProperty Name="lead" Relationship="Self.FK_Opportunity_lead" FromRole="Opportunity" ToRole="lead" />
+          <NavigationProperty Name="product" Relationship="Self.FK_Opportunity_product" FromRole="Opportunity" ToRole="product" />
+          <NavigationProperty Name="orderProducts" Relationship="Self.FK_orderProduct_Opportunity" FromRole="Opportunity" ToRole="orderProduct" />
+        </EntityType>
+        <EntityType Name="orderProduct">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="customerId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="employeeId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="opportunityId" Type="Int32" Nullable="false" />
+          <Property Name="productId" Type="Int32" Nullable="false" />
+          <Property Name="price" Type="Double" Nullable="false" />
+          <Property Name="status" Type="Boolean" Nullable="false" />
+          <Property Name="dateCreated" Type="DateTime" Nullable="false" Precision="0" />
+          <NavigationProperty Name="customer" Relationship="Self.FK_orderProduct_customer" FromRole="orderProduct" ToRole="customer" />
+          <NavigationProperty Name="employee" Relationship="Self.FK_orderProduct_employee" FromRole="orderProduct" ToRole="employee" />
+          <NavigationProperty Name="invoices" Relationship="Self.FK_invoice_orderProduct" FromRole="orderProduct" ToRole="invoice" />
+          <NavigationProperty Name="Opportunity" Relationship="Self.FK_orderProduct_Opportunity" FromRole="orderProduct" ToRole="Opportunity" />
+          <NavigationProperty Name="product" Relationship="Self.FK_orderProduct_product" FromRole="orderProduct" ToRole="product" />
+        </EntityType>
+        <EntityType Name="priceList">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="productId" Type="Int32" Nullable="false" />
+          <Property Name="isDefault" Type="Boolean" Nullable="false" />
+          <Property Name="discountCategory" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="discount" Type="Int32" />
+          <NavigationProperty Name="product" Relationship="Self.FK_priceList_product" FromRole="priceList" ToRole="product" />
+        </EntityType>
+        <EntityType Name="product">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="price" Type="Double" Nullable="false" />
+          <Property Name="categoryId" Type="Int32" Nullable="false" />
+          <Property Name="quantity" Type="Int32" />
+          <Property Name="picture" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <NavigationProperty Name="category" Relationship="Self.FK_product_category" FromRole="product" ToRole="category" />
+          <NavigationProperty Name="Opportunities" Relationship="Self.FK_Opportunity_product" FromRole="product" ToRole="Opportunity" />
+          <NavigationProperty Name="orderProducts" Relationship="Self.FK_orderProduct_product" FromRole="product" ToRole="orderProduct" />
+          <NavigationProperty Name="priceLists" Relationship="Self.FK_priceList_product" FromRole="product" ToRole="priceList" />
+        </EntityType>
+        <EntityType Name="sysdiagram">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="usersAccount">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="userName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="isAdmin" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_product_category">
+          <End Role="category" Type="Self.category" Multiplicity="1" />
+          <End Role="product" Type="Self.product" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="category">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="product">
+              <PropertyRef Name="categoryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_employee_ContactCompany">
+          <End Role="ContactCompany" Type="Self.ContactCompany" Multiplicity="1" />
+          <End Role="employee" Type="Self.employee" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ContactCompany">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="employee">
+              <PropertyRef Name="companyid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_invoice_customer">
+          <End Role="customer" Type="Self.customer" Multiplicity="1" />
+          <End Role="invoice" Type="Self.invoice" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="customer">
+              <PropertyRef Name="userName" />
+            </Principal>
+            <Dependent Role="invoice">
+              <PropertyRef Name="customerId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_lead_customer">
+          <End Role="customer" Type="Self.customer" Multiplicity="1" />
+          <End Role="lead" Type="Self.lead" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="customer">
+              <PropertyRef Name="userName" />
+            </Principal>
+            <Dependent Role="lead">
+              <PropertyRef Name="CustomerId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Opportunity_customer">
+          <End Role="customer" Type="Self.customer" Multiplicity="1" />
+          <End Role="Opportunity" Type="Self.Opportunity" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="customer">
+              <PropertyRef Name="userName" />
+            </Principal>
+            <Dependent Role="Opportunity">
+              <PropertyRef Name="customerId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_orderProduct_customer">
+          <End Role="customer" Type="Self.customer" Multiplicity="1" />
+          <End Role="orderProduct" Type="Self.orderProduct" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="customer">
+              <PropertyRef Name="userName" />
+            </Principal>
+            <Dependent Role="orderProduct">
+              <PropertyRef Name="customerId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_invoice_employee">
+          <End Role="employee" Type="Self.employee" Multiplicity="1" />
+          <End Role="invoice" Type="Self.invoice" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="employee">
+              <PropertyRef Name="userName" />
+            </Principal>
+            <Dependent Role="invoice">
+              <PropertyRef Name="employeeid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_lead_employee">
+          <End Role="employee" Type="Self.employee" Multiplicity="1" />
+          <End Role="lead" Type="Self.lead" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="employee">
+              <PropertyRef Name="userName" />
+            </Principal>
+            <Dependent Role="lead">
+              <PropertyRef Name="employeeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Opportunity_employee">
+          <End Role="employee" Type="Self.employee" Multiplicity="1" />
+          <End Role="Opportunity" Type="Self.Opportunity" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="employee">
+              <PropertyRef Name="userName" />
+            </Principal>
+            <Dependent Role="Opportunity">
+              <PropertyRef Name="employeeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_orderProduct_employee">
+          <End Role="employee" Type="Self.employee" Multiplicity="1" />
+          <End Role="orderProduct" Type="Self.orderProduct" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="employee">
+              <PropertyRef Name="userName" />
+            </Principal>
+            <Dependent Role="orderProduct">
+              <PropertyRef Name="employeeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_invoice_Opportunity">
+          <End Role="Opportunity" Type="Self.Opportunity" Multiplicity="1" />
+          <End Role="invoice" Type="Self.invoice" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Opportunity">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="invoice">
+              <PropertyRef Name="opportunityId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_invoice_orderProduct">
+          <End Role="orderProduct" Type="Self.orderProduct" Multiplicity="1" />
+          <End Role="invoice" Type="Self.invoice" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="orderProduct">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="invoice">
+              <PropertyRef Name="orderId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_leaddetail_lead">
+          <End Role="lead" Type="Self.lead" Multiplicity="1" />
+          <End Role="leaddetail" Type="Self.leaddetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="lead">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="leaddetail">
+              <PropertyRef Name="leadId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Opportunity_lead">
+          <End Role="lead" Type="Self.lead" Multiplicity="1" />
+          <End Role="Opportunity" Type="Self.Opportunity" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="lead">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Opportunity">
+              <PropertyRef Name="leadId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Opportunity_product">
+          <End Role="product" Type="Self.product" Multiplicity="1" />
+          <End Role="Opportunity" Type="Self.Opportunity" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="product">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Opportunity">
+              <PropertyRef Name="productId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_orderProduct_Opportunity">
+          <End Role="Opportunity" Type="Self.Opportunity" Multiplicity="1" />
+          <End Role="orderProduct" Type="Self.orderProduct" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Opportunity">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="orderProduct">
+              <PropertyRef Name="opportunityId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_orderProduct_product">
+          <End Role="product" Type="Self.product" Multiplicity="1" />
+          <End Role="orderProduct" Type="Self.orderProduct" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="product">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="orderProduct">
+              <PropertyRef Name="productId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_priceList_product">
+          <End Role="product" Type="Self.product" Multiplicity="1" />
+          <End Role="priceList" Type="Self.priceList" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="product">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="priceList">
+              <PropertyRef Name="productId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="GatewaySalesCRMEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="categories" EntityType="Self.category" />
+          <EntitySet Name="ContactCompanies" EntityType="Self.ContactCompany" />
+          <EntitySet Name="customers" EntityType="Self.customer" />
+          <EntitySet Name="employees" EntityType="Self.employee" />
+          <EntitySet Name="invoices" EntityType="Self.invoice" />
+          <EntitySet Name="leads" EntityType="Self.lead" />
+          <EntitySet Name="leaddetails" EntityType="Self.leaddetail" />
+          <EntitySet Name="Opportunities" EntityType="Self.Opportunity" />
+          <EntitySet Name="orderProducts" EntityType="Self.orderProduct" />
+          <EntitySet Name="priceLists" EntityType="Self.priceList" />
+          <EntitySet Name="products" EntityType="Self.product" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+          <EntitySet Name="usersAccounts" EntityType="Self.usersAccount" />
+          <AssociationSet Name="FK_product_category" Association="Self.FK_product_category">
+            <End Role="category" EntitySet="categories" />
+            <End Role="product" EntitySet="products" />
+          </AssociationSet>
+          <AssociationSet Name="FK_employee_ContactCompany" Association="Self.FK_employee_ContactCompany">
+            <End Role="ContactCompany" EntitySet="ContactCompanies" />
+            <End Role="employee" EntitySet="employees" />
+          </AssociationSet>
+          <AssociationSet Name="FK_invoice_customer" Association="Self.FK_invoice_customer">
+            <End Role="customer" EntitySet="customers" />
+            <End Role="invoice" EntitySet="invoices" />
+          </AssociationSet>
+          <AssociationSet Name="FK_lead_customer" Association="Self.FK_lead_customer">
+            <End Role="customer" EntitySet="customers" />
+            <End Role="lead" EntitySet="leads" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Opportunity_customer" Association="Self.FK_Opportunity_customer">
+            <End Role="customer" EntitySet="customers" />
+            <End Role="Opportunity" EntitySet="Opportunities" />
+          </AssociationSet>
+          <AssociationSet Name="FK_orderProduct_customer" Association="Self.FK_orderProduct_customer">
+            <End Role="customer" EntitySet="customers" />
+            <End Role="orderProduct" EntitySet="orderProducts" />
+          </AssociationSet>
+          <AssociationSet Name="FK_invoice_employee" Association="Self.FK_invoice_employee">
+            <End Role="employee" EntitySet="employees" />
+            <End Role="invoice" EntitySet="invoices" />
+          </AssociationSet>
+          <AssociationSet Name="FK_lead_employee" Association="Self.FK_lead_employee">
+            <End Role="employee" EntitySet="employees" />
+            <End Role="lead" EntitySet="leads" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Opportunity_employee" Association="Self.FK_Opportunity_employee">
+            <End Role="employee" EntitySet="employees" />
+            <End Role="Opportunity" EntitySet="Opportunities" />
+          </AssociationSet>
+          <AssociationSet Name="FK_orderProduct_employee" Association="Self.FK_orderProduct_employee">
+            <End Role="employee" EntitySet="employees" />
+            <End Role="orderProduct" EntitySet="orderProducts" />
+          </AssociationSet>
+          <AssociationSet Name="FK_invoice_Opportunity" Association="Self.FK_invoice_Opportunity">
+            <End Role="Opportunity" EntitySet="Opportunities" />
+            <End Role="invoice" EntitySet="invoices" />
+          </AssociationSet>
+          <AssociationSet Name="FK_invoice_orderProduct" Association="Self.FK_invoice_orderProduct">
+            <End Role="orderProduct" EntitySet="orderProducts" />
+            <End Role="invoice" EntitySet="invoices" />
+          </AssociationSet>
+          <AssociationSet Name="FK_leaddetail_lead" Association="Self.FK_leaddetail_lead">
+            <End Role="lead" EntitySet="leads" />
+            <End Role="leaddetail" EntitySet="leaddetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Opportunity_lead" Association="Self.FK_Opportunity_lead">
+            <End Role="lead" EntitySet="leads" />
+            <End Role="Opportunity" EntitySet="Opportunities" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Opportunity_product" Association="Self.FK_Opportunity_product">
+            <End Role="product" EntitySet="products" />
+            <End Role="Opportunity" EntitySet="Opportunities" />
+          </AssociationSet>
+          <AssociationSet Name="FK_orderProduct_Opportunity" Association="Self.FK_orderProduct_Opportunity">
+            <End Role="Opportunity" EntitySet="Opportunities" />
+            <End Role="orderProduct" EntitySet="orderProducts" />
+          </AssociationSet>
+          <AssociationSet Name="FK_orderProduct_product" Association="Self.FK_orderProduct_product">
+            <End Role="product" EntitySet="products" />
+            <End Role="orderProduct" EntitySet="orderProducts" />
+          </AssociationSet>
+          <AssociationSet Name="FK_priceList_product" Association="Self.FK_priceList_product">
+            <End Role="product" EntitySet="products" />
+            <End Role="priceList" EntitySet="priceLists" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="GatewaySalesCRMModelStoreContainer" CdmEntityContainer="GatewaySalesCRMEntities">
+          <EntitySetMapping Name="categories">
+            <EntityTypeMapping TypeName="GatewaySalesCRMModel.category">
+              <MappingFragment StoreEntitySet="category">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="categoryName" ColumnName="categoryName" />
+                <ScalarProperty Name="categoryDetail" ColumnName="categoryDetail" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ContactCompanies">
+            <EntityTypeMapping TypeName="GatewaySalesCRMModel.ContactCompany">
+              <MappingFragment StoreEntitySet="ContactCompany">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="mobile" ColumnName="mobile" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="city" ColumnName="city" />
+                <ScalarProperty Name="state" ColumnName="state" />
+                <ScalarProperty Name="country" ColumnName="country" />
+                <ScalarProperty Name="pincode" ColumnName="pincode" />
+                <ScalarProperty Name="picture" ColumnName="picture" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="customers">
+            <EntityTypeMapping TypeName="GatewaySalesCRMModel.customer">
+              <MappingFragment StoreEntitySet="customer">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="userName" ColumnName="userName" />
+                <ScalarProperty Name="password" ColumnName="password" />
+                <ScalarProperty Name="firstName" ColumnName="firstName" />
+                <ScalarProperty Name="middleName" ColumnName="middleName" />
+                <ScalarProperty Name="lastName" ColumnName="lastName" />
+                <ScalarProperty Name="dateOfBirth" ColumnName="dateOfBirth" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="mobile" ColumnName="mobile" />
+                <ScalarProperty Name="companyName" ColumnName="companyName" />
+                <ScalarProperty Name="address" ColumnName="address" />
+                <ScalarProperty Name="city" ColumnName="city" />
+                <ScalarProperty Name="state" ColumnName="state" />
+                <ScalarProperty Name="country" ColumnName="country" />
+                <ScalarProperty Name="pincode" ColumnName="pincode" />
+                <ScalarProperty Name="picture" ColumnName="picture" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="employees">
+            <EntityTypeMapping TypeName="GatewaySalesCRMModel.employee">
+              <MappingFragment StoreEntitySet="employee">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="userName" ColumnName="userName" />
+                <ScalarProperty Name="password" ColumnName="password" />
+                <ScalarProperty Name="firstName" ColumnName="firstName" />
+                <ScalarProperty Name="middleName" ColumnName="middleName" />
+                <ScalarProperty Name="lastName" ColumnName="lastName" />
+                <ScalarProperty Name="dateofBirth" ColumnName="dateofBirth" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="mobile" ColumnName="mobile" />
+                <ScalarProperty Name="companyid" ColumnName="companyid" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="city" ColumnName="city" />
+                <ScalarProperty Name="state" ColumnName="state" />
+                <ScalarProperty Name="country" ColumnName="country" />
+                <ScalarProperty Name="pincode" ColumnName="pincode" />
+                <ScalarProperty Name="picture" ColumnName="picture" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="invoices">
+            <EntityTypeMapping TypeName="GatewaySalesCRMModel.invoice">
+              <MappingFragment StoreEntitySet="invoice">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="customerId" ColumnName="customerId" />
+                <ScalarProperty Name="employeeid" ColumnName="employeeid" />
+                <ScalarProperty Name="orderId" ColumnName="orderId" />
+                <ScalarProperty Name="opportunityId" ColumnName="opportunityId" />
+                <ScalarProperty Name="price" ColumnName="price" />
+                <ScalarProperty Name="dateCreated" ColumnName="dateCreated" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="leads">
+            <EntityTypeMapping TypeName="GatewaySalesCRMModel.lead">
+              <MappingFragment StoreEntitySet="lead">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="CustomerId" ColumnName="CustomerId" />
+                <ScalarProperty Name="employeeId" ColumnName="employeeId" />
+                <ScalarProperty Name="leadOwner" ColumnName="leadOwner" />
+                <ScalarProperty Name="leadSource" ColumnName="leadSource" />
+                <ScalarProperty Name="leadTopic" ColumnName="leadTopic" />
+                <ScalarProperty Name="leadStatus" ColumnName="leadStatus" />
+                <ScalarProperty Name="leadStage" ColumnName="leadStage" />
+                <ScalarProperty Name="leadBudget" ColumnName="leadBudget" />
+                <ScalarProperty Name="generateddate" ColumnName="generateddate" />
+                <ScalarProperty Name="terminateddate" ColumnName="terminateddate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="leaddetails">
+            <EntityTypeMapping TypeName="GatewaySalesCRMModel.leaddetail">
+              <MappingFragment StoreEntitySet="leaddetail">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="leadId" ColumnName="leadId" />
+                <ScalarProperty Name="modifiedDate" ColumnName="modifiedDate" />
+                <ScalarProperty Name="developedDate" ColumnName="developedDate" />
+                <ScalarProperty Name="proposingDate" ColumnName="proposingDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Opportunities">
+            <EntityTypeMapping TypeName="GatewaySalesCRMModel.Opportunity">
+              <MappingFragment StoreEntitySet="Opportunity">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="customerId" ColumnName="customerId" />
+                <ScalarProperty Name="employeeId" ColumnName="employeeId" />
+                <ScalarProperty Name="leadId" ColumnName="leadId" />
+                <ScalarProperty Name="productId" ColumnName="productId" />
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="dateCreated" ColumnName="dateCreated" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="orderProducts">
+            <EntityTypeMapping TypeName="GatewaySalesCRMModel.orderProduct">
+              <MappingFragment StoreEntitySet="orderProduct">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="customerId" ColumnName="customerId" />
+                <ScalarProperty Name="employeeId" ColumnName="employeeId" />
+                <ScalarProperty Name="opportunityId" ColumnName="opportunityId" />
+                <ScalarProperty Name="productId" ColumnName="productId" />
+                <ScalarProperty Name="price" ColumnName="price" />
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="dateCreated" ColumnName="dateCreated" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="priceLists">
+            <EntityTypeMapping TypeName="GatewaySalesCRMModel.priceList">
+              <MappingFragment StoreEntitySet="priceList">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="productId" ColumnName="productId" />
+                <ScalarProperty Name="isDefault" ColumnName="isDefault" />
+                <ScalarProperty Name="discountCategory" ColumnName="discountCategory" />
+                <ScalarProperty Name="discount" ColumnName="discount" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="products">
+            <EntityTypeMapping TypeName="GatewaySalesCRMModel.product">
+              <MappingFragment StoreEntitySet="product">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="price" ColumnName="price" />
+                <ScalarProperty Name="categoryId" ColumnName="categoryId" />
+                <ScalarProperty Name="quantity" ColumnName="quantity" />
+                <ScalarProperty Name="picture" ColumnName="picture" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="GatewaySalesCRMModel.sysdiagram">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="usersAccounts">
+            <EntityTypeMapping TypeName="GatewaySalesCRMModel.usersAccount">
+              <MappingFragment StoreEntitySet="usersAccount">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="userName" ColumnName="userName" />
+                <ScalarProperty Name="password" ColumnName="password" />
+                <ScalarProperty Name="isAdmin" ColumnName="isAdmin" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

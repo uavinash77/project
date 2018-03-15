@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="DefaultConnection-Web.config Connection String" description="DefaultConnection Connection String used in web.config by the application to access the database." defaultValue="Data Source=(LocalDb)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\aspnet-salesCRMWebApi-20180309051845.mdf;Initial Catalog=aspnet-salesCRMWebApi-20180309051845;Integrated Security=True" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="D:\\AngularInVisual\\salesCRMWebApi\\salesCRMWebApi\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='DefaultConnection']/@connectionString" />
+  </parameter>
+  <parameter name="GatewaySalesCRMEntities-Web.config Connection String" description="GatewaySalesCRMEntities Connection String used in web.config by the application to access the database." defaultValue="metadata=res://*/Models.GatewaySalesCRM.csdl|res://*/Models.GatewaySalesCRM.ssdl|res://*/Models.GatewaySalesCRM.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=10.0.2.236;initial catalog=GatewaySalesCRM;persist security info=True;user id=saa;password=Password123@;MultipleActiveResultSets=True;App=EntityFramework&quot;" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="D:\\AngularInVisual\\salesCRMWebApi\\salesCRMWebApi\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='GatewaySalesCRMEntities']/@connectionString" />
+  </parameter>
+</parameters>
